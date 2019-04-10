@@ -1,3 +1,8 @@
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
+})
 describe('Danhsach_BT_13.spec', function() {
     context('Đăng nhập', function(){
         beforeEach(function(){
@@ -14,7 +19,7 @@ describe('Danhsach_BT_13.spec', function() {
             cy.get('[data-target="#editAssignmentModal"]').should('be.visible')
             cy.get('[data-target="#resultExamModal"]').should('be.visible')
             cy.get('#dropdown_0 > :nth-child(3)').should('be.visible')
-            cy.get('[href="/live_class/class/5c6cf60f0966f254d79b4c34/result_assignment_detail/5c6cf62d0966f254d79b4c35"]')
+            cy.get('[href="/live_class/class/5c6cf60f0966f254d79b4c34/result_assignment_detail/5cad1405911abf370802d468"]')
             .should('be.visible')
             cy.get('#dropdown_0 > :nth-child(5)').should('be.visible')
             cy.get('#dropdown_0 > :nth-child(6)').should('be.visible')
